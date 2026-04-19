@@ -52,9 +52,21 @@ bash install.sh
 
 ---
 
+## Where This Works
+
+| Feature | Claude Code CLI | Claude Code VS Code | Claude.ai web | Claude.ai app |
+|---|:---:|:---:|:---:|:---:|
+| Slash commands (`/pm`, etc.) | ✓ | ✓ | ✗ | ✗ |
+| `@` file references | ✓ | ✓ | ✗ | ✗ |
+| Dev files via Project upload | ✗ | ✗ | ✓ | ✓ |
+
+Slash commands and `@` references are **Claude Code features** — they work in both the CLI and the VS Code extension, but not on the web or mobile app. For Claude.ai, use the Project approach instead.
+
+---
+
 ## Usage
 
-### Claude Code (CLI / VS Code) — slash commands
+### Claude Code (CLI or VS Code) — slash commands
 
 After installing, invoke any dev with a slash command:
 
@@ -84,30 +96,37 @@ You can also use `@` references directly if you prefer, or need to load a dev mi
 
 ## Syncing Changes
 
-After editing dev files in this repo, push the changes to your local Claude installation:
+After editing dev files in this repo, push the changes to your local Claude installation.
 
+**Windows (PowerShell):**
+```powershell
+.\install.ps1
+```
+
+**Mac / Linux (bash):**
 ```bash
 bash install.sh
 ```
 
-This overwrites `~/.claude/devs/` with the current contents of `devs/`. Run it any time after making changes.
+This overwrites `~/.claude/devs/` and `~/.claude/commands/` with the current contents of the repo. Run it any time after making changes.
 
 ### Via Claude
 
-You can also ask Claude to sync:
+You can also ask Claude to sync from within this repo:
 
 > Sync my devs from the repo
 
-Claude will run the install script.
+Claude will run the appropriate script.
 
 ---
 
 ## Adding a New Dev
 
 1. Create a new `.md` file in `devs/` using the structure of an existing dev as a template
-2. Add it to the table in `devs/README.md`
-3. Add it to the table in this `README.md`
-4. Run `bash install.sh` to install it
+2. Create a matching `.md` file in `commands/` following the same pattern as the existing command files
+3. Add the new dev to the table in `devs/README.md`
+4. Add the new dev to the table in this `README.md`
+5. Sync: `.\install.ps1` (Windows) or `bash install.sh` (Mac/Linux)
 
 ---
 
