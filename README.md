@@ -4,18 +4,19 @@ A roster of specialized AI dev personas for use with Claude. Each dev is a markd
 
 ## The Team
 
-| Dev | File | Purpose |
+| Dev | Slash Command | Purpose |
 |---|---|---|
-| Project Manager | `devs/pm.md` | Entry point, planning, triage, routing |
-| Senior Dev | `devs/senior-dev.md` | Code guidance, debugging, architecture |
-| Code Review | `devs/code-review.md` | Auditing existing code for quality and security |
-| Security Architect | `devs/security.md` | Threat modeling, auth design, compliance |
-| UI/UX Designer | `devs/ui.md` | Interface design and frontend implementation |
-| QA / Testing | `devs/qa.md` | Test strategy, writing tests, coverage |
-| DevOps Engineer | `devs/devops.md` | CI/CD, infrastructure, deployments |
-| Database Architect | `devs/database.md` | Schema design, queries, migrations |
-| API Designer | `devs/api.md` | REST/GraphQL design, OpenAPI specs |
-| Docs & Writing | `devs/docs.md` | Technical docs, copy editing, changelogs |
+| Project Manager | `/pm` | Entry point, planning, triage, routing |
+| Senior Dev | `/senior-dev` | Code guidance, debugging, architecture |
+| Code Review | `/code-review` | Auditing existing code for quality and security |
+| Security Architect | `/security` | Threat modeling, auth design, compliance |
+| UI/UX Designer | `/ui` | Interface design and frontend implementation |
+| QA / Testing | `/qa` | Test strategy, writing tests, coverage |
+| DevOps Engineer | `/devops` | CI/CD, infrastructure, deployments |
+| Database Architect | `/database` | Schema design, queries, migrations |
+| API Designer | `/api` | REST/GraphQL design, OpenAPI specs |
+| Docs & Writing | `/docs` | Technical docs, copy editing, changelogs |
+| Prompt Engineer | `/prompt-eng` | Prompt design, diagnosis, iteration, output format control |
 
 **Not sure who to ask? Start with PM — it will route you.**
 
@@ -33,6 +34,12 @@ Open this repo in Claude Code and say:
 
 Claude will run the install script for you.
 
+### Manual — Mac / Linux (bash)
+
+```bash
+bash install.sh
+```
+
 ### Manual — Windows (PowerShell)
 
 ```powershell
@@ -44,12 +51,6 @@ If you get an execution policy error, run this once first:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-### Manual — Mac / Linux (bash)
-
-```bash
-bash install.sh
-```
-
 ---
 
 ## Where This Works
@@ -58,7 +59,7 @@ bash install.sh
 |---|:---:|:---:|:---:|:---:|
 | Slash commands (`/pm`, etc.) | ✓ | ✓ | ✗ | ✗ |
 | `@` file references | ✓ | ✓ | ✗ | ✗ |
-| Dev files via Project upload | ✗ | ✗ | ✓ | ✓ |
+| Via Claude.ai Project | ✗ | ✗ | ✓ | ✓ |
 
 Slash commands and `@` references are **Claude Code features** — they work in both the CLI and the VS Code extension, but not on the web or mobile app. For Claude.ai, use the Project approach instead.
 
@@ -80,7 +81,7 @@ After installing, invoke any dev with a slash command:
 
 The slash command loads the full dev persona and passes your message to it. No path required.
 
-You can also use `@` references directly if you prefer, or need to load a dev mid-conversation:
+Use `@` to load a dev mid-conversation or chain multiple devs in one session:
 
 ```
 @~/.claude/devs/pm.md
@@ -96,19 +97,7 @@ You can also use `@` references directly if you prefer, or need to load a dev mi
 
 ## Syncing Changes
 
-After editing dev files in this repo, push the changes to your local Claude installation.
-
-**Windows (PowerShell):**
-```powershell
-.\install.ps1
-```
-
-**Mac / Linux (bash):**
-```bash
-bash install.sh
-```
-
-This overwrites `~/.claude/devs/` and `~/.claude/commands/` with the current contents of the repo. Run it any time after making changes.
+After editing dev files in this repo, run the same install command as above — it's idempotent and overwrites `~/.claude/devs/` and `~/.claude/commands/` with the current repo contents.
 
 ### Via Claude
 
@@ -124,7 +113,7 @@ Claude will run the appropriate script.
 
 1. Create a new `.md` file in `devs/` using the structure of an existing dev as a template
 2. Create a matching `.md` file in `commands/` following the same pattern as the existing command files
-3. Add the new dev to the table in `devs/README.md`
+3. Add the new dev to the table in `devs/README.md` (the dev roster index)
 4. Add the new dev to the table in this `README.md`
 5. Sync: `.\install.ps1` (Windows) or `bash install.sh` (Mac/Linux)
 

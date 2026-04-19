@@ -29,6 +29,36 @@ New-Item -ItemType Directory -Force -Path $CommandsTarget | Out-Null
 Copy-Item "$CommandsSource\*.md" -Destination $CommandsTarget -Force
 Get-ChildItem "$CommandsSource\*.md" | ForEach-Object { Write-Host "  + /$($_.BaseName)" }
 
+# Patch ~/.claude/settings.json to allow reading from ~/.claude/devs
+$SettingsFile = Join-Path $env:USERPROFILE ".claude\settings.json"
+$DevsTargetJson = $DevsTarget
+
+Write-Host "Settings: $SettingsFile"
+if (Test-Path $SettingsFile) {
+    $settings = Get-Content $SettingsFile -Raw | ConvertFrom-Json
+    if (-not $settings.permissions) {
+        $settings | Add-Member -NotePropertyName permissions -NotePropertyValue ([PSCustomObject]@{}) -Force
+    }
+    if (-not $settings.permissions.additionalDirectories) {
+        $settings.permissions | Add-Member -NotePropertyName additionalDirectories -NotePropertyValue @() -Force
+    }
+    if ($settings.permissions.additionalDirectories -notcontains $DevsTargetJson) {
+        $settings.permissions.additionalDirectories += $DevsTargetJson
+        $settings | ConvertTo-Json -Depth 10 | Set-Content $SettingsFile -Encoding UTF8
+        Write-Host "  + Added $DevsTargetJson to permissions.additionalDirectories"
+    } else {
+        Write-Host "  + Already present in permissions.additionalDirectories"
+    }
+} else {
+    $settings = @{
+        permissions = @{
+            additionalDirectories = @($DevsTargetJson)
+        }
+    }
+    $settings | ConvertTo-Json -Depth 10 | Set-Content $SettingsFile -Encoding UTF8
+    Write-Host "  + Created $SettingsFile with permissions.additionalDirectories"
+}
+
 Write-Host ""
 Write-Host "Done."
 Write-Host ""

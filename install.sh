@@ -33,6 +33,41 @@ for f in "$COMMANDS_SOURCE"/*.md; do
   echo "  ✓ /$(basename "$f" .md)"
 done
 
+# Patch ~/.claude/settings.json to allow reading from ~/.claude/devs
+SETTINGS_FILE="$HOME/.claude/settings.json"
+DEVS_TARGET_JSON="$DEVS_TARGET"
+
+echo "Settings: $SETTINGS_FILE"
+if [ -f "$SETTINGS_FILE" ]; then
+  # Check if additionalDirectories already contains the devs path
+  if ! python3 -c "
+import json, sys
+data = json.load(open('$SETTINGS_FILE'))
+dirs = data.get('permissions', {}).get('additionalDirectories', [])
+sys.exit(0 if '$DEVS_TARGET_JSON' in dirs else 1)
+" 2>/dev/null; then
+    python3 -c "
+import json
+with open('$SETTINGS_FILE', 'r') as f:
+    data = json.load(f)
+data.setdefault('permissions', {}).setdefault('additionalDirectories', []).append('$DEVS_TARGET_JSON')
+with open('$SETTINGS_FILE', 'w') as f:
+    json.dump(data, f, indent=2)
+print('  ✓ Added $DEVS_TARGET_JSON to permissions.additionalDirectories')
+"
+  else
+    echo "  ✓ Already present in permissions.additionalDirectories"
+  fi
+else
+  python3 -c "
+import json
+data = {'permissions': {'additionalDirectories': ['$DEVS_TARGET_JSON']}}
+with open('$SETTINGS_FILE', 'w') as f:
+    json.dump(data, f, indent=2)
+print('  ✓ Created $SETTINGS_FILE with permissions.additionalDirectories')
+"
+fi
+
 echo ""
 echo "Done."
 echo ""
