@@ -33,16 +33,21 @@ Open this repo in Claude Code and say:
 
 Claude will run the install script for you.
 
-### Manual (script)
+### Manual — Windows (PowerShell)
+
+```powershell
+.\install.ps1
+```
+
+If you get an execution policy error, run this once first:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+### Manual — Mac / Linux (bash)
 
 ```bash
 bash install.sh
-```
-
-### Manual (copy)
-
-```bash
-cp devs/* ~/.claude/devs/
 ```
 
 ---

@@ -5,13 +5,13 @@ This repo contains the canonical source for the claude-devs roster — specializ
 ## Key commands
 
 **Install / sync everything:**
-```bash
-bash install.sh
-```
 
-This copies `devs/` to `~/.claude/devs/` and `commands/` to `~/.claude/commands/`.
+Windows (PowerShell): `.\install.ps1`
+Mac/Linux (bash): `bash install.sh`
 
-**When the user says "install the devs" or "sync my devs":** run `bash install.sh`.
+Both copy `devs/` to `~/.claude/devs/` and `commands/` to `~/.claude/commands/`.
+
+**When the user says "install the devs" or "sync my devs":** run the appropriate script for the OS.
 
 **When the user edits a dev file in `devs/`:** remind them to run `bash install.sh` to push changes to their local Claude installation.
 
