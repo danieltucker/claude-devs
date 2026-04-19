@@ -49,15 +49,24 @@ cp devs/* ~/.claude/devs/
 
 ## Usage
 
-### Claude Code (CLI / VS Code)
+### Claude Code (CLI / VS Code) — slash commands
 
-Reference a dev with `@` at any point in a conversation:
+After installing, invoke any dev with a slash command:
 
 ```
-@~/.claude/devs/pm.md I have a new project idea — where do I start?
-@~/.claude/devs/code-review.md Review the auth module in src/auth/
-@~/.claude/devs/security.md Threat model the user data flow in this app
-@~/.claude/devs/ui.md Here's my dashboard — what should be improved?
+/pm I have a new project idea — where do I start?
+/code-review Review the auth module in src/auth/
+/security Threat model the user data flow in this app
+/ui Here's my dashboard — what should be improved?
+/senior-dev This function is returning undefined intermittently...
+```
+
+The slash command loads the full dev persona and passes your message to it. No path required.
+
+You can also use `@` references directly if you prefer, or need to load a dev mid-conversation:
+
+```
+@~/.claude/devs/pm.md
 ```
 
 ### Claude.ai (web / app)

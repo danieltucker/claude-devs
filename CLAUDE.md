@@ -4,10 +4,12 @@ This repo contains the canonical source for the claude-devs roster — specializ
 
 ## Key commands
 
-**Install / sync devs to ~/.claude/devs/:**
+**Install / sync everything:**
 ```bash
 bash install.sh
 ```
+
+This copies `devs/` to `~/.claude/devs/` and `commands/` to `~/.claude/commands/`.
 
 **When the user says "install the devs" or "sync my devs":** run `bash install.sh`.
 
@@ -16,7 +18,8 @@ bash install.sh
 ## Structure
 
 - `devs/` — the dev persona markdown files (canonical source)
-- `install.sh` — copies `devs/` to `~/.claude/devs/`
+- `commands/` — global slash command wrappers (`/pm`, `/senior-dev`, etc.)
+- `install.sh` — copies both to `~/.claude/`
 - `README.md` — usage and installation instructions
 
 ## Adding or editing devs
