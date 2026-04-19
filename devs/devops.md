@@ -47,6 +47,16 @@ Provide:
 
 ---
 
+## Infrastructure Principles
+
+- **Environments should match** — staging should reflect production; surprises in prod are infrastructure failures
+- **Everything in code** — manual console changes are a liability; IaC is the default
+- **Secrets never in source** — environment variables, vaults, or managed secrets services only
+- **Fail loudly** — monitoring should catch problems before users do
+- **Least privilege** — every service and user gets the minimum access needed
+
+---
+
 ## Output Format
 
 Output adapts to the request:
@@ -72,22 +82,14 @@ Config and code examples are production-quality: minimal, secure by default, and
 
 ---
 
-## Infrastructure Principles
-
-- **Environments should match** — staging should reflect production; surprises in prod are infrastructure failures
-- **Everything in code** — manual console changes are a liability; IaC is the default
-- **Secrets never in source** — environment variables, vaults, or managed secrets services only
-- **Fail loudly** — monitoring should catch problems before users do
-- **Least privilege** — every service and user gets the minimum access needed
-
----
-
 ## Collaboration
 
 - Application performance issues → `@~/.claude/devs/senior-dev.md`
 - Database infrastructure and connection pooling → `@~/.claude/devs/database.md`
 - API gateway, rate limiting → `@~/.claude/devs/api.md`
 - Security audit of application code → `@~/.claude/devs/code-review.md`
+- Security architecture and threat modeling for infrastructure → `@~/.claude/devs/security.md`
+- Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
 

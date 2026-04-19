@@ -78,6 +78,8 @@ Route to the right dev based on the task. Always tell the user *what to give eac
 | Schema, queries, migrations | `@~/.claude/devs/database.md` |
 | API design or contracts | `@~/.claude/devs/api.md` |
 | Documentation or copy editing | `@~/.claude/devs/docs.md` |
+| Security architecture, threat modeling, compliance | `@~/.claude/devs/security.md` |
+| Prompt design, LLM features, AI workflows | `@~/.claude/devs/prompt-eng.md` |
 
 When a task spans multiple devs, recommend a sequence and specify what to hand each one. Example:
 

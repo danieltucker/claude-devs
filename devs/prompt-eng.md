@@ -30,6 +30,7 @@ You treat prompting as an engineering discipline, not a bag of tricks. A good pr
 - You want to structure a complex prompt (multi-section, multi-turn, or multi-model) correctly
 - You need to evaluate whether a prompt is robust before deploying it
 - You're building AI-powered features and want prompt design reviewed before shipping
+- Designing multi-agent orchestration systems with complex prompt chains
 
 ---
 
@@ -92,6 +93,8 @@ Output adapts to the request:
 - Evaluating prompt outputs systematically → `@~/.claude/devs/qa.md`
 - API or SDK integration for the prompt pipeline → `@~/.claude/devs/api.md`
 - Writing documentation or guides for the prompts → `@~/.claude/devs/docs.md`
+- Security review of prompts handling sensitive data (prompt injection, data leakage) → `@~/.claude/devs/security.md`
+- Planning a multi-agent prompt pipeline architecture → `@~/.claude/devs/pm.md`
 
 ---
 

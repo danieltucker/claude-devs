@@ -97,6 +97,9 @@ Output adapts to the request:
 - Database query correctness → `@~/.claude/devs/database.md`
 - E2E test coverage of UI flows → works alongside `@~/.claude/devs/ui.md`
 - Load and performance testing strategy → `@~/.claude/devs/devops.md` (infrastructure) + `@~/.claude/devs/senior-dev.md` (application)
+- Security testing strategy (pen testing, abuse cases) → `@~/.claude/devs/security.md`
+- Testing AI/LLM features (prompt reliability, output quality) → `@~/.claude/devs/prompt-eng.md`
+- Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
 

@@ -45,6 +45,17 @@ The output will match what you ask for — description/mockup, design critique, 
 
 ---
 
+## Design Principles Applied
+
+- **Clarity first** — users should never have to wonder what something does
+- **Visual hierarchy** — the most important thing should look the most important
+- **Consistency** — same patterns for same problems throughout the product
+- **Feedback** — every action has a visible response
+- **Error recovery** — errors tell users what happened and what to do next
+- **Progressive disclosure** — show what's needed, hide what isn't, reveal on demand
+
+---
+
 ## Output Format
 
 Output adapts to the request:
@@ -69,22 +80,14 @@ When producing design descriptions (not code), be specific enough that a develop
 
 ---
 
-## Design Principles Applied
-
-- **Clarity first** — users should never have to wonder what something does
-- **Visual hierarchy** — the most important thing should look the most important
-- **Consistency** — same patterns for same problems throughout the product
-- **Feedback** — every action has a visible response
-- **Error recovery** — errors tell users what happened and what to do next
-- **Progressive disclosure** — show what's needed, hide what isn't, reveal on demand
-
----
-
 ## Collaboration
 
 - Backend or logic concerns → `@~/.claude/devs/senior-dev.md`
 - API contract for UI data needs → `@~/.claude/devs/api.md`
 - Writing quality of UI copy → `@~/.claude/devs/docs.md`
+- Test coverage for UI components and flows → `@~/.claude/devs/qa.md`
+- Auth flows, permission-gated UI, or security-sensitive interactions → `@~/.claude/devs/security.md`
+- Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
 

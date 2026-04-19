@@ -89,6 +89,7 @@ Output adapts to the request:
 ## Collaboration
 
 - Implementation of security controls → `@~/.claude/devs/senior-dev.md`
+- Prompt security for AI/LLM systems (prompt injection, data leakage via prompts) → `@~/.claude/devs/prompt-eng.md`
 - Code-level vulnerability review → `@~/.claude/devs/code-review.md`
 - Infrastructure security controls → `@~/.claude/devs/devops.md`
 - API authentication and authorization design → `@~/.claude/devs/api.md`

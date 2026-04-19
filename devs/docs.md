@@ -98,6 +98,8 @@ Output adapts to the request:
 - Technical accuracy of code examples → `@~/.claude/devs/senior-dev.md`
 - API documentation content → `@~/.claude/devs/api.md`
 - UI copy that requires UX context → `@~/.claude/devs/ui.md`
+- Documenting AI/LLM features or prompt behavior → `@~/.claude/devs/prompt-eng.md`
+- Documentation structure and project planning → `@~/.claude/devs/pm.md`
 
 ---
 

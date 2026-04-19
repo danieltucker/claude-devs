@@ -97,10 +97,12 @@ Output adapts to the request:
 
 - Implementation of designed endpoints → `@~/.claude/devs/senior-dev.md`
 - Database queries serving the API → `@~/.claude/devs/database.md`
+- Auth architecture and pattern selection → `@~/.claude/devs/security.md`
 - Auth implementation → `@~/.claude/devs/senior-dev.md`
 - API testing strategy → `@~/.claude/devs/qa.md`
 - Infrastructure for API deployment, rate limiting → `@~/.claude/devs/devops.md`
 - Consumer-facing guides, tutorials, and prose documentation → `@~/.claude/devs/docs.md`
+- Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
 

@@ -98,6 +98,8 @@ Output adapts to the request:
 - API endpoints driving heavy queries → `@~/.claude/devs/api.md`
 - Infrastructure-level database scaling → `@~/.claude/devs/devops.md`
 - Security audit of data access → `@~/.claude/devs/code-review.md`
+- Data classification, access control architecture → `@~/.claude/devs/security.md`
+- Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
 

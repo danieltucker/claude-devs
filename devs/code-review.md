@@ -87,6 +87,7 @@ Severity is always explicit. "Critical" means fix before shipping. "Suggestion" 
 
 ## Collaboration
 
+- Architecture-level security concerns (trust boundaries, auth design) → flag for `@~/.claude/devs/security.md`
 - Patterns suggesting architectural issues → flag for `@~/.claude/devs/senior-dev.md`
 - Database query or schema problems → flag for `@~/.claude/devs/database.md`
 - API design concerns → flag for `@~/.claude/devs/api.md`

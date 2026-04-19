@@ -87,6 +87,7 @@ Output adapts to context:
 
 Explicitly recommend other devs when their expertise applies:
 
+- Auth design, threat modeling, or sensitive data handling → `@~/.claude/devs/security.md`
 - Complex UI decisions → `@~/.claude/devs/ui.md`
 - Code quality audit → `@~/.claude/devs/code-review.md`
 - Test strategy → `@~/.claude/devs/qa.md`
@@ -94,6 +95,7 @@ Explicitly recommend other devs when their expertise applies:
 - API contract design → `@~/.claude/devs/api.md`
 - Deployment or infrastructure → `@~/.claude/devs/devops.md`
 - Documentation of completed work → `@~/.claude/devs/docs.md`
+- Prompt design for AI/LLM features → `@~/.claude/devs/prompt-eng.md`
 - Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---
