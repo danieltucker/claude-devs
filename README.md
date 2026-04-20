@@ -1,8 +1,27 @@
-# claude-devs
+# claude-devs — Cognigy Edition
 
-A roster of specialized AI dev personas for use with Claude. Each dev is a markdown file containing a focused role definition, responsibilities, behavioral guidelines, and example prompts. Reference a dev during a Claude session to get expert-mode behavior for that domain.
+A roster of specialized AI dev personas for Cognigy conversational AI agent development. Built on the base claude-devs framework, this branch extends it with Cognigy-specific personas and deep reference files covering the Cognigy platform, export schema, node types, context variables, and design patterns.
 
-## The Team
+**Not sure who to ask? Start with `/cognigy-pm` — it will route you.**
+
+---
+
+## Cognigy Dev Team
+
+| Dev | Slash Command | Purpose |
+|---|---|---|
+| Cognigy PM | `/cognigy-pm` | Entry point, planning, flow design, naming, routing |
+| Cognigy Senior Dev | `/cognigy-senior-dev` | Build flows, implement nodes, write Code node JS, AI agent configs |
+| Cognigy Code Review | `/cognigy-code-review` | Audit flows, node configs, and Code node JS |
+| Cognigy Prompt Analyst | `/cognigy-prompt-analyst` | Diagnose LLM behavior, detect prompt conflicts, explain unexpected outputs |
+| Cognigy Security | `/cognigy-security` | Audit agents for vulnerabilities, PII exposure, prompt injection |
+| Cognigy API Designer | `/cognigy-api` | HTTP connections, tool parameter schemas, external API integration |
+| Cognigy QA | `/cognigy-qa` | Test flows, intent coverage, NLU accuracy, edge cases |
+| Cognigy Docs | `/cognigy-docs` | Generate documentation from agent exports |
+
+## General Dev Team
+
+General-purpose devs also included for work outside the Cognigy platform.
 
 | Dev | Slash Command | Purpose |
 |---|---|---|
@@ -10,22 +29,32 @@ A roster of specialized AI dev personas for use with Claude. Each dev is a markd
 | Senior Dev | `/senior-dev` | Code guidance, debugging, architecture |
 | Code Review | `/code-review` | Auditing existing code for quality and security |
 | Security Architect | `/security` | Threat modeling, auth design, compliance |
-| UI/UX Designer | `/ui` | Interface design and frontend implementation |
 | QA / Testing | `/qa` | Test strategy, writing tests, coverage |
-| DevOps Engineer | `/devops` | CI/CD, infrastructure, deployments |
-| Database Architect | `/database` | Schema design, queries, migrations |
 | API Designer | `/api` | REST/GraphQL design, OpenAPI specs |
 | Docs & Writing | `/docs` | Technical docs, copy editing, changelogs |
 | Prompt Engineer | `/prompt-eng` | Prompt design, diagnosis, iteration, output format control |
-| SEO Specialist | `/seo` | Technical SEO, on-page optimization, structured data, keyword research |
 
-**Not sure who to ask? Start with PM — it will route you.**
+---
+
+## Cognigy Reference Files
+
+Deep-reference files loaded by the Cognigy devs — also useful to load directly for raw platform reference.
+
+| File | Contents |
+|---|---|
+| `cognigy-README.md` | Platform overview, team roster, architecture, data flow |
+| `cognigy-export-schema.md` | Export package structure, file schemas, ID system, navigation guide |
+| `cognigy-nodes.md` | All node types with config schemas and usage guidance |
+| `cognigy-context-vars.md` | `input.*` / `context.*` / `profile.*` hierarchy, naming conventions, Code node API |
+| `cognigy-patterns.md` | Design patterns: RAG, tool calling, flow composition, error handling |
 
 ---
 
 ## Installation
 
-Installing copies the dev files to `~/.claude/devs/` so they're available globally in Claude Code (CLI and VS Code).
+Installing copies dev files to `~/.claude/devs/` and commands to `~/.claude/commands/` — available globally in Claude Code.
+
+> **Note**: The install script adds files but does not remove files already in `~/.claude/devs/`. If you have the base claude-devs branch installed alongside this one, both sets of devs will coexist — they use different prefixes (`cognigy-`) and will not conflict.
 
 ### Automatic (via Claude)
 
@@ -33,9 +62,7 @@ Open this repo in Claude Code and say:
 
 > Install the devs
 
-Claude will run the install script for you.
-
-### Manual — Mac / Linux (bash)
+### Manual — Mac / Linux
 
 ```bash
 bash install.sh
@@ -58,11 +85,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 | Feature | Claude Code CLI | Claude Code VS Code | Claude.ai web | Claude.ai app |
 |---|:---:|:---:|:---:|:---:|
-| Slash commands (`/pm`, etc.) | ✓ | ✓ | ✗ | ✗ |
+| Slash commands (`/cognigy-pm`, etc.) | ✓ | ✓ | ✗ | ✗ |
 | `@` file references | ✓ | ✓ | ✗ | ✗ |
 | Via Claude.ai Project | ✗ | ✗ | ✓ | ✓ |
-
-Slash commands and `@` references are **Claude Code features** — they work in both the CLI and the VS Code extension, but not on the web or mobile app. For Claude.ai, use the Project approach instead.
 
 ---
 
@@ -70,22 +95,18 @@ Slash commands and `@` references are **Claude Code features** — they work in 
 
 ### Claude Code (CLI or VS Code) — slash commands
 
-After installing, invoke any dev with a slash command:
-
 ```
-/pm I have a new project idea — where do I start?
-/code-review Review the auth module in src/auth/
-/security Threat model the user data flow in this app
-/ui Here's my dashboard — what should be improved?
-/senior-dev This function is returning undefined intermittently...
+/cognigy-pm I need to build a new account recovery flow
+/cognigy-prompt-analyst Why does this prompt return the wrong output when the user asks X?
+/cognigy-security Audit this agent export before it goes to production
+/cognigy-docs Generate documentation for this agent
 ```
 
-The slash command loads the full dev persona and passes your message to it. No path required.
-
-Use `@` to load a dev mid-conversation or chain multiple devs in one session:
+Load a dev or reference file mid-conversation with `@`:
 
 ```
-@~/.claude/devs/pm.md
+@~/.claude/devs/cognigy-pm.md
+@~/.claude/devs/cognigy-nodes.md
 ```
 
 ### Claude.ai (web / app)
@@ -98,37 +119,38 @@ Use `@` to load a dev mid-conversation or chain multiple devs in one session:
 
 ## Syncing Changes
 
-After editing dev files in this repo, run the same install command as above — it's idempotent and overwrites `~/.claude/devs/` and `~/.claude/commands/` with the current repo contents.
+After editing files in this repo, re-run the install command — it overwrites `~/.claude/devs/` and `~/.claude/commands/` with the current repo contents.
 
-### Via Claude
+```bash
+bash install.sh
+```
 
-You can also ask Claude to sync from within this repo:
+Or ask Claude from within this repo:
 
-> Sync my devs from the repo
-
-Claude will run the appropriate script.
+> Sync my devs
 
 ---
 
 ## Adding a New Dev
 
-1. Create a new `.md` file in `devs/` using the structure of an existing dev as a template
-2. Create a matching `.md` file in `commands/` following the same pattern as the existing command files
-3. Add the new dev to the table in `devs/README.md` (the dev roster index)
-4. Add the new dev to the table in this `README.md`
-5. Sync: `.\install.ps1` (Windows) or `bash install.sh` (Mac/Linux)
+1. Create a `.md` file in `devs/` using an existing dev as a template
+2. Create a matching `.md` file in `commands/` following the same one-liner pattern
+3. Add the dev to the table in `devs/README.md`
+4. Add the dev to the table in this `README.md`
+5. Run `bash install.sh` to sync
+
+For a Cognigy-specific dev, prefix the filename with `cognigy-` and reference the relevant Cognigy context files at the top of the Role section.
 
 ---
 
-## Structure of a Dev File
-
-Each dev file follows this structure:
+## Dev File Structure
 
 ```
 # [Dev Name]
 
 ## Role
 Who this dev is and what makes them distinctive.
+(Cognigy devs: reference context files here)
 
 ## Responsibilities
 Bullet list of what they do.
@@ -139,14 +161,14 @@ Situations that call for this dev.
 ## How to Engage
 What to provide when invoking this dev.
 
-## [Approach / Principles]  ← varies by dev
-Domain-specific methodology.
+## [Approach / Methodology]  ← varies by dev
+Domain-specific method or checklist.
 
 ## Output Format
 How output adapts to different request types.
 
 ## Constraints
-What this dev will not do (important for keeping roles clean).
+What this dev will not do.
 
 ## Collaboration
 When and where to route to other devs.
