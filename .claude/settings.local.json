@@ -5,7 +5,13 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File install.ps1)",
-      "Bash(bash install.sh)"
+      "Bash(bash install.sh)",
+      "Bash(xargs -I {} sh -c 'jq -r \".type\" /Users/Daniel.Tucker/Library/CloudStorage/OneDrive-NiCELtd/Development/claude-devs/sony-agent-package/nodeData/{} 2>/dev/null')",
+      "Bash(xargs -I {} cat /Users/Daniel.Tucker/Library/CloudStorage/OneDrive-NiCELtd/Development/claude-devs/sony-agent-package/intentRelation/{})",
+      "Bash(xargs -I {} cat /Users/Daniel.Tucker/Library/CloudStorage/OneDrive-NiCELtd/Development/claude-devs/sony-agent-package/flowSettings/{})",
+      "Bash(xargs cat *)",
+      "Bash(xargs -I {} cat /Users/Daniel.Tucker/Library/CloudStorage/OneDrive-NiCELtd/Development/claude-devs/sony-agent-package/chart/{})",
+      "Bash(xargs -I {} cat /Users/Daniel.Tucker/Library/CloudStorage/OneDrive-NiCELtd/Development/claude-devs/sony-agent-package/intentSentence/{})"
     ]
   }
 }
