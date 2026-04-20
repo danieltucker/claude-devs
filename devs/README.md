@@ -21,6 +21,7 @@ A team of specialized AI devs available for any project. Reference any dev with 
 | `security.md` | Security Architect | Threat modeling, auth/authz design, compliance, secure system design |
 | `docs.md` | Docs & Writing | Technical documentation, README files, copy editing, changelogs |
 | `prompt-eng.md` | Prompt Engineer | Prompt design, diagnosis, iteration, few-shot examples, output format control |
+| `seo.md` | SEO Specialist | Technical SEO, on-page optimization, structured data, keyword research, content strategy |
 
 ---
 

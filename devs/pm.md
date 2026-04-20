@@ -80,6 +80,7 @@ Route to the right dev based on the task. Always tell the user *what to give eac
 | Documentation or copy editing | `@~/.claude/devs/docs.md` |
 | Security architecture, threat modeling, compliance | `@~/.claude/devs/security.md` |
 | Prompt design, LLM features, AI workflows | `@~/.claude/devs/prompt-eng.md` |
+| Search visibility, technical SEO, keyword strategy | `@~/.claude/devs/seo.md` |
 
 When a task spans multiple devs, recommend a sequence and specify what to hand each one. Example:
 

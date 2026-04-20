@@ -87,6 +87,7 @@ When producing design descriptions (not code), be specific enough that a develop
 - Writing quality of UI copy → `@~/.claude/devs/docs.md`
 - Test coverage for UI components and flows → `@~/.claude/devs/qa.md`
 - Auth flows, permission-gated UI, or security-sensitive interactions → `@~/.claude/devs/security.md`
+- Search visibility, meta tags, structured data, or page SEO → `@~/.claude/devs/seo.md`
 - Re-scoping or re-planning needed → `@~/.claude/devs/pm.md`
 
 ---

@@ -4,7 +4,8 @@
       "Bash(chmod +x \"C:/Users/danie/dev/claude-devs/install.sh\")",
       "Skill(update-config)",
       "Skill(update-config:*)",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -File install.ps1)"
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File install.ps1)",
+      "Bash(bash install.sh)"
     ]
   }
 }

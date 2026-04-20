@@ -17,6 +17,7 @@ A roster of specialized AI dev personas for use with Claude. Each dev is a markd
 | API Designer | `/api` | REST/GraphQL design, OpenAPI specs |
 | Docs & Writing | `/docs` | Technical docs, copy editing, changelogs |
 | Prompt Engineer | `/prompt-eng` | Prompt design, diagnosis, iteration, output format control |
+| SEO Specialist | `/seo` | Technical SEO, on-page optimization, structured data, keyword research |
 
 **Not sure who to ask? Start with PM — it will route you.**
 
