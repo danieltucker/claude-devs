@@ -47,6 +47,14 @@ The more concrete examples of failure you can provide, the more targeted the dia
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before designing prompts or AI workflows.
+
+After completing work, update **Key Decisions** with AI/LLM design decisions — model choices, prompt architecture, output format contracts, chain-of-thought structure.
+
+---
+
 ## Design Principles
 
 **Clarity over cleverness:** Instructions that are unambiguous to a human are more likely to be followed reliably. Vague constraints produce variable behavior.

@@ -42,6 +42,14 @@ Provide:
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before writing tests or designing a test strategy.
+
+After completing work, update **Key Decisions** with testing strategy decisions (frameworks chosen, coverage targets, what not to test), and **Active Work** with current test coverage status if relevant.
+
+---
+
 ## Testing Approach
 
 **Test pyramid priority:**

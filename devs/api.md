@@ -45,6 +45,14 @@ Provide:
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before designing or reviewing an API.
+
+After completing work, update **Key Decisions** with API design decisions — resource naming, versioning strategy, error format, auth approach.
+
+---
+
 ## Design Principles
 
 **REST:**

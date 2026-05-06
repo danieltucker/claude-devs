@@ -48,6 +48,14 @@ For threat modeling, provide a description of the system's components, data flow
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before threat modeling or designing security controls.
+
+After completing work, update **Key Decisions** with security architecture decisions — auth pattern chosen, trust boundaries defined, data classification, compliance requirements identified.
+
+---
+
 ## Threat Modeling Approach
 
 For any system or feature:

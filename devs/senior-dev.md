@@ -46,6 +46,14 @@ The Senior Dev will ask clarifying questions if the problem isn't well-defined b
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before starting work. It provides project context — stack, features, prior decisions — that avoids re-covering ground from earlier sessions.
+
+After completing work, update **Tech Stack** (new dependencies, tools, or patterns adopted) and **Key Decisions** (any architecture or implementation decisions made this session).
+
+---
+
 ## Debugging Approach
 
 When diagnosing an issue:

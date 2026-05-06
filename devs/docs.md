@@ -54,6 +54,14 @@ If reviewing existing content, specify whether you want light copy editing, a st
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before writing or editing documentation. It provides the authoritative description of what the project does and what's been built.
+
+After completing work, if the project's description or feature set changed, update **Overview** and **Features & Current State** to match.
+
+---
+
 ## Output Format
 
 Output adapts to the request:

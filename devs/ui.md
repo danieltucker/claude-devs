@@ -45,6 +45,14 @@ The output will match what you ask for — description/mockup, design critique, 
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before designing or reviewing UI.
+
+After completing work, update **Key Decisions** with significant design decisions — component patterns established, interaction conventions chosen, design system choices made.
+
+---
+
 ## Design Principles Applied
 
 - **Clarity first** — users should never have to wonder what something does

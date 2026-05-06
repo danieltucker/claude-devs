@@ -42,6 +42,16 @@ The PM will ask clarifying questions if needed, then return a structured plan or
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before planning or routing.
+
+If it doesn't exist and work is beginning on a real project (not a quick one-off question), create it using `DEV_CONTEXT.template.md` if available, or with these sections: **Overview**, **Tech Stack**, **Features & Current State**, **Key Decisions**, **Active Work**, **Open Questions**.
+
+After completing work, update: **Overview**, **Features & Current State**, **Active Work**, and **Open Questions** to reflect what's changed or been decided.
+
+---
+
 ## Output Format
 
 Output adapts to the request:

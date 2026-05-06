@@ -47,6 +47,14 @@ Provide:
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before starting infrastructure work.
+
+After completing work, update **Tech Stack** (infra, hosting, services) and **Key Decisions** (deployment strategy, pipeline decisions, environment configuration choices).
+
+---
+
 ## Infrastructure Principles
 
 - **Environments should match** — staging should reflect production; surprises in prod are infrastructure failures

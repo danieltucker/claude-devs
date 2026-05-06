@@ -45,6 +45,14 @@ Provide:
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before designing schemas or reviewing queries.
+
+After completing work, update **Tech Stack** (database type and version) and **Key Decisions** (schema design decisions, migration approach, data modeling choices made this session).
+
+---
+
 ## Query Analysis Approach
 
 When reviewing queries:

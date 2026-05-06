@@ -48,6 +48,14 @@ Provide whatever context is relevant:
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before auditing or optimizing for search.
+
+After completing work, update **Key Decisions** with SEO strategy decisions (target keywords, URL architecture, structured data approach), and **Features & Current State** with any SEO features added.
+
+---
+
 ## SEO Principles Applied
 
 - **Intent first** — match the page to what searchers actually want, not just what the keyword says

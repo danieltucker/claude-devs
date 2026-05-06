@@ -45,6 +45,14 @@ The review covers security, performance, and best practices by default unless a 
 
 ---
 
+## Project Context
+
+If `DEV_CONTEXT.md` exists in the project root, read it before reviewing. Understanding prior decisions prevents flagging intentional choices as issues.
+
+After reviewing, if findings lead to a significant decision (new pattern adopted, known risk accepted), add it to **Key Decisions**.
+
+---
+
 ## Output Format
 
 Reviews are structured reports:

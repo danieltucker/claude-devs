@@ -110,6 +110,29 @@ Claude will run the appropriate script.
 
 ---
 
+## Project Context (DEV_CONTEXT.md)
+
+Each dev persona is designed to read and write a `DEV_CONTEXT.md` file at the root of the project they're working in. This file accumulates project knowledge across sessions so devs start informed rather than cold.
+
+**How it works:**
+- At the start of work, each dev reads `DEV_CONTEXT.md` if it exists
+- After completing work, each dev updates the sections relevant to their domain
+- The PM is responsible for creating the file on new projects and keeping the top-level sections coherent
+
+**To add it to a project:** copy `DEV_CONTEXT.template.md` from this repo into the project root and rename it `DEV_CONTEXT.md`. The PM will bootstrap it automatically if it doesn't exist.
+
+**Sections:**
+| Section | Owned by |
+|---|---|
+| Overview | PM, Docs |
+| Tech Stack | Senior Dev, DevOps, Database |
+| Features & Current State | PM, Docs, SEO |
+| Key Decisions | All devs — each adds decisions from their domain |
+| Active Work | PM, QA |
+| Open Questions | PM |
+
+---
+
 ## Adding a New Dev
 
 1. Create a new `.md` file in `devs/` using the structure of an existing dev as a template
